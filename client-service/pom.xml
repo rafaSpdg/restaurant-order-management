@@ -58,8 +58,15 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+			<!-- exclusion remove o suporte a JUnit4, garantindo que o JUnit5 seja atualizado-->
+			<exclusions>
+            <exclusion>
+                <groupId>org.junit.vintage</groupId>
+                <artifactId>junit-vintage-engine</artifactId>
+            </exclusion>
+        </exclusions>
 		</dependency>
-		<!-- JUnit 5 (Já incluído no spring-boot-starter-test) -->
+		
 		<!-- Mockito para criar mocks -->
 		<dependency>
 			<groupId>org.mockito</groupId>
