@@ -10,5 +10,5 @@ import com.restaurant.order_service.dto.ClientResponse;
 public interface ClientServiceFeignClient {
     
     @GetMapping("/{id}")
-    ClientResponse getClientById(@PathVariable("id") String id);
+    ClientResponse getClientById(@PathVariable("id") int id);
 }

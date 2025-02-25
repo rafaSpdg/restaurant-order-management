@@ -18,7 +18,7 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String clientId;
+    private int clientId;
 
     private String clientName;
     private String tableNumber;
@@ -36,7 +36,7 @@ public class Order {
 
     
 
-    public Order(String clientId, String clientName, String tableNumber, String totalprice, OrderStatus status,
+    public Order(int clientId, String clientName, String tableNumber, String totalprice, OrderStatus status,
             LocalDateTime createdAt) {
         this.clientId = clientId;
         this.clientName = clientName;
@@ -98,13 +98,13 @@ public class Order {
 
 
 
-    public String getClientId() {
+    public int getClientId() {
         return clientId;
     }
 
 
 
-    public void setClientId(String clientId) {
+    public void setClientId(int clientId) {
         this.clientId = clientId;
     }
 

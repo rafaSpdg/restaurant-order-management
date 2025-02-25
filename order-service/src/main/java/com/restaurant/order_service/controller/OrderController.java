@@ -45,14 +45,14 @@ public class OrderController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Order> getOrderById(@PathVariable Long id) {
+    public ResponseEntity<Order> getOrderById(@PathVariable int id) {
         Optional<Order> order = orderService.getOrderById(id);
 
         return order.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @PutMapping("/{id}/status")
-    public ResponseEntity<Order> updateOrderStatus(@PathVariable Long id, @RequestParam OrderStatus status) {
+    public ResponseEntity<Order> updateOrderStatus(@PathVariable int id, @RequestParam OrderStatus status) {
         
         return ResponseEntity.ok(orderService.updateOrderStatus(id, status));
     }
